@@ -37,13 +37,14 @@ cd backend/ProductApp.Api
 dotnet restore
 dotnet ef database update      # creates database + tables
 dotnet run                     # starts the API at http://localhost:5000
-
+```
 
 #### Frontend  
 ```bash
 cd frontend/product-app
 npm install
 ng serve --open                # starts Angular dev server at http://localhost:4200
+```
 
 ## 📂 Directory Structure
 ```bash
@@ -58,36 +59,27 @@ ProductApp/
           ├── src/app/
           ├── angular.json
           └── ...
+```
 
 ## ✅ Usage Flow
-Open the browser at http://localhost:4200.
-
-Log in (use credentials or mock login).
-
-Navigate to Products page: view list, search, sort.
-
-Create a new product (via “New Product” button).
-
-Edit an existing product (via “Edit” link).
-
-Logout to test route protection.
+- Open the browser at http://localhost:4200.
+- Log in (use credentials or mock login).
+- Navigate to Products page: view list, search, sort.
+- Create a new product (via “New Product” button).
+- Edit an existing product (via “Edit” link).
+- Logout to test route protection.
 
 ## 🔐 Authentication & Security
 
-Auth guard protects routes like /products, /products/new, /products/edit/:id.
-
-On logout, local storage is cleared and user redirected to login page.
-
-Only authenticated users can access product management pages.
+- Auth guard protects routes like /products, /products/new, /products/edit/:id.
+- On logout, local storage is cleared and user redirected to login page.
+- Only authenticated users can access product management pages.
 
 ## 📄 Known Limitations & Future Improvements
 
-Authentication is currently mocked (no real backend token handling).
-
-No pagination implemented for large product sets (could be added).
-
-UI is moderately styled; further improvements (themes, responsiveness) possible.
-
-Additional endpoints (delete product, user management) could be added in future versions.
+- Authentication is currently mocked (no real backend token handling).
+- No pagination implemented for large product sets (could be added).
+- UI is moderately styled; further improvements (themes, responsiveness) possible.
+- Additional endpoints (delete product, user management) could be added in future versions.
 
 ## Crafted by David Téllez – ing.davidtellez@gmail.com
