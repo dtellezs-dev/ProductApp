@@ -1,0 +1,31 @@
+<button *ngIf="isAuthenticated" class="btn btn-success mx-2" [routerLink]="['/products','new']">New Product</button>
+
+<div class="container mt-4">
+  <input class="form-control mb-2"
+         type="text"
+         placeholder="Search product..."
+         [(ngModel)]="searchTerm"
+         (input)="filter()" />
+
+  <button class="btn btn-primary mb-3" (click)="toggleSort()">
+    Sort by Price: {{ sortAsc ? 'ASC' : 'DESC' }}
+  </button>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Stock</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of filteredProducts">
+        <td>{{ p.name }}</td>
+        <td>{{ p.price | currency }}</td>
+        <td>{{ p.stock }}</td>
+        <td><a [routerLink]="['/products/edit', p.id]" class="btn btn-sm btn-primary">Edit</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
